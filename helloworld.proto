@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package helloworld;
+option go_package = "api/protos;generated";
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+  NestedData nestedData=2;
+}
+
+message NestedData{
+    string something =1;
+    optional string  opt=2;
+}
+
+message HelloResponse {
+  string message = 1;
+  optional string age2=2;
+}
